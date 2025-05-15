@@ -119,19 +119,39 @@
 
     const dummyVideos = [
       {
-        src: "videos/ssstik.io_@rimmadmyntiiiiiii_1746540651034.mp4",
+        src: "videos/iklan_1.mp4",
         username: "@dummy1",
         description: "Video dummy pertama"
       },
       {
-        src: "videos/ssstik.io_@rimmadmyntiiiiiii_1746540742947.mp4",
+        src: "videos/iklan_2.mp4",
         username: "@dummy2",
         description: "Video dummy kedua"
       },
       {
-        src: "videos/ssstik.io_@rimmadmyntiiiiiii_1746540706883.mp4",
+        src: "videos/iklan_3.mp4",
         username: "@dummy3",
         description: "Video dummy ketiga"
+      },
+      {
+        src: "videos/iklan_4.mp4",
+        username: "@dummy4",
+        description: "Video dummy keempat"
+      },
+      {
+        src: "videos/iklan_5.mp4",
+        username: "@dummy5",
+        description: "Video dummy kelima"
+      },
+      {
+        src: "videos/iklan_6.mp4",
+        username: "@dummy6",
+        description: "Video dummy keenam"
+      },
+      {
+        src: "videos/iklan_7.mp4",
+        username: "@dummy7",
+        description: "Video dummy ketujuh"
       }
     ];
 
@@ -183,7 +203,7 @@
       return wrapper;
     }
 
-    function loadVideos(count = 3) {
+    function loadVideos(count = 7) {
       for (let i = 0; i < count; i++) {
         const videoData = dummyVideos[i % dummyVideos.length];
         const el = createVideoElement(videoData);
@@ -206,10 +226,10 @@
               currentIndex = Array.from(container.querySelectorAll("video")).indexOf(entry.target);
 
               // Infinite scroll trigger
-              if (currentIndex >= container.children.length - 2 && !isLoading) {
+              if (currentIndex >= container.children.length - 7 && !isLoading) {
                 isLoading = true;
                 setTimeout(() => {
-                  loadVideos(3);
+                  loadVideos(7);
                   isLoading = false;
                 }, 500);
               }
@@ -293,7 +313,7 @@
     }
 
     // Init
-    loadVideos(3);
+    loadVideos(7);
   </script>
 </body>
 </html>
